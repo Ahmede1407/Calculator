@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #bbf1fa, #51c2d5);
+}
+
+.calc-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  width: 100%;
+  grid-template-columns: repeat(4, 6.25rem);
+  grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
+}
+
+.calc-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.calc-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.prev-operator {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.5rem;
+}
+.curr-operator {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+@media only screen and (max-width: 425px) {
+  .calc-grid {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  }
+  .calc-grid > button {
+    font-size: 1.5rem;
+  }
+  .prev-operator {
+    font-size: 1rem;
+  }
+  .curr-operator {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .calc-grid {
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(90px, auto) repeat(5, 70px);
+  }
+}
